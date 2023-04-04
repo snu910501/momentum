@@ -1,0 +1,11 @@
+.todo-item{
+  margin-bottom: 10px;
+}
+
+.finish{
+  color: black;
+}
+
+.unfinish{
+  color: white;
+}

@@ -4,6 +4,7 @@ import styles from './Clock.module.css';
 const Clock = () => {
 
   const [time, setTime] = useState(getClock());
+  const [amPm, setAmPm] = useState('Good Morning')
 
   function getClock() {
     const date = new Date();
@@ -16,11 +17,19 @@ const Clock = () => {
     const date = new Date();
     const hour = String(date.getHours()).padStart(2, "0");
     const minute = String(date.getMinutes()).padStart(2, "0");
-    console.log('hi');
     setTime(`${hour}:${minute}`)
   };
 
-  setInterval(getClockAuto, 1000);
+  function getAmPm() {
+    const date = new Date();
+    const hour = String(date.getHours()).padStart(2, "0");
+    if(hour >= 12) {
+      setAmPm('Good Afternoon');
+    }
+  }
+
+  setInterval(getClockAuto, 10000);
+  setInterval(getAmPm, 10000);
 
   return (
     <div className={styles.clock}>
@@ -28,7 +37,7 @@ const Clock = () => {
         {time}
       </div>
       <div className={styles.text}>
-        Good Morning, Have a nice day
+        {amPm} Have a nice day
       </div>
     </div>
   );

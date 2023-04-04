@@ -1,0 +1,17 @@
+.todo-list{
+  color:white;
+  font-size: 24px;
+  height: 200px;
+}
+
+.todo-item{
+  margin-bottom: 5px;
+}
+
+.finish{
+  color: black;
+}
+
+.unfinish{
+  color: white;
+}
